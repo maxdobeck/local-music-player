@@ -2,12 +2,18 @@
   <div id="wrapper">
     <main>
       <h1>Bookmark Browser</h1>
+      <new-file></new-file>
     </main>
   </div>
 </template>
 
 <script>
+  import NewFile from './NewFile'
+
   export default {
+    components: {
+      NewFile
+    },
     name: 'bookmark-browser'
   }
 </script>
