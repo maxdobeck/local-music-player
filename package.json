@@ -25,7 +25,7 @@
     "productName": "local-music-player",
     "appId": "org.max.local-music-player",
   "directories": {
-      "output": "build"
+      "output": "build"    
     },
     "files": [
       "dist/electron/**/*"
