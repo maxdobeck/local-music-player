@@ -20,9 +20,11 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 600,
+    height: 800,
     useContentSize: false,
-    width: 1000,
+    width: 1500,
+    minWidth: 600,
+    minHeight: 450,
     icon: require('path').join(__dirname, '/assets/256x256.png')
   })
 
