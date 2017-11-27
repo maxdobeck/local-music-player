@@ -23,8 +23,8 @@
   },
   "build": {
     "productName": "local-music-player",
-    "appId": "org.simulatedgreg.electron-vue",
-    "directories": {
+    "appId": "org.max.local-music-player",
+  "directories": {
       "output": "build"
     },
     "files": [
@@ -52,7 +52,10 @@
       "icon": "build/icons/icon.ico"
     },
     "linux": {
-      "icon": "build/icons"
+      "executableName": "Local Music Player",
+      "icon": "build/icons",
+      "category": "AudioVideo",
+      "maintainer": "https://github.com/maxdobeck/local-music-player"      
     }
   },
   "dependencies": {
