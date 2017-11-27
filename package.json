@@ -46,10 +46,10 @@
       ]
     },
     "mac": {
-      "icon": "build/icons/icon.icns"
+      "icon": "build/icon.icns"
     },
     "win": {
-      "icon": "build/icons/icon.ico"
+      "icon": "build/icon.ico"
     },
     "linux": {
       "executableName": "Local Music Player",
