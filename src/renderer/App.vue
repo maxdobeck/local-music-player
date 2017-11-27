@@ -1,18 +1,16 @@
 <template>
   <div id="app">
-    <bookmark-browser></bookmark-browser>
+    <landing-page></landing-page>
   </div>
 </template>
 
 <script>
-  // import LandingPage from '@/components/LandingPage'
-  import BookmarkBrowser from '@/components/BookmarkBrowser'
+  import LandingPage from '@/components/LandingPage'
 
   export default {
     name: 'local-music-player',
     components: {
-      BookmarkBrowser
-      // LandingPage
+      LandingPage
     }
   }
 </script>
