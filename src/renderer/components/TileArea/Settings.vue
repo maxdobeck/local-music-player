@@ -1,6 +1,11 @@
 <template>
   <div>
-    <Button>Settings</Button>
+    <Card>
+      <div style="text-align:center">
+        <Icon type="gear-b" size="65" />
+        <p>Settings</p>
+      </div>
+    </Card>
   </div>
 </template>
 

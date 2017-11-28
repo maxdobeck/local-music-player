@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Row :gutter="12">
+    <Row :gutter="12" type="flex" justify="center">
       <Col span="10">
         <merge></merge>
       </Col>
@@ -8,7 +8,7 @@
         <find></find>
       </Col>
     </Row>
-    <Row :gutter="12">
+    <Row :gutter="12" type="flex" justify="center">
       <Col span="10">
         <share></share>
       </Col>

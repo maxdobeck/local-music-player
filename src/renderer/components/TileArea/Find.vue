@@ -1,7 +1,10 @@
 <template>
   <div>
     <Card>
-      Find
+      <div style="text-align:center">
+        <Icon type="search" size="65"/>
+        <p>Find</p>
+      </div>
     </Card>
   </div>
 </template>

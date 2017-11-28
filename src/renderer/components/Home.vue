@@ -3,7 +3,7 @@
     <Row>
       <navbar></navbar>
     </Row>
-    <Row>
+    <Row type="flex" justify="center">
       <Col span="8">
         <playlist-queue></playlist-queue>
       </Col>
@@ -12,7 +12,9 @@
       </Col>
       <Col span="8">
         <tile-area></tile-area>
-        <currently-playing></currently-playing>
+        <Row>
+          <currently-playing></currently-playing>
+        </Row>
       </Col>
     </Row>
   </div>
@@ -36,5 +38,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+  .wrapper {
+    padding: none;
   }
 </style>

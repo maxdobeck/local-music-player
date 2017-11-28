@@ -1,7 +1,9 @@
 <template>
+<Row type="flex" justify="center">
   <div>
     <h2>Songs</h2>
   </div>
+</Row>
 </template>
 
 <script>
