@@ -1,9 +1,21 @@
 <template>
   <div>
-    <merge></merge>
-    <find></find>
-    <share></share>
-    <settings></settings>
+    <Row :gutter="12">
+      <Col span="10">
+        <merge></merge>
+      </Col>
+      <Col span="10">
+        <find></find>
+      </Col>
+    </Row>
+    <Row :gutter="12">
+      <Col span="10">
+        <share></share>
+      </Col>
+      <Col span="10">
+        <settings></settings>
+      </Col>
+    </Row>
   </div>
 </template>
 

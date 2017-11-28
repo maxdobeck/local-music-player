@@ -1,6 +1,8 @@
 <template>
   <div>
-    <Button>Find</Button>
+    <Card>
+      Find
+    </Card>
   </div>
 </template>
 

@@ -1,18 +1,20 @@
 <template>
   <div id="wrapper">
-    <navbar></navbar>
-    <main>
-      <div class="col1">
+    <Row>
+      <navbar></navbar>
+    </Row>
+    <Row>
+      <Col span="8">
         <playlist-queue></playlist-queue>
-      </div>
-      <div class="col2">
+      </Col>
+      <Col span="8">
         <song-queue></song-queue>
-      </div>
-      <div class="col3">
+      </Col>
+      <Col span="8">
         <tile-area></tile-area>
         <currently-playing></currently-playing>
-      </div>
-    </main>
+      </Col>
+    </Row>
   </div>
 </template>
 
@@ -34,25 +36,5 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-
-  main {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .col1 {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .col2 {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .col3 {
-    display: flex;
-    flex-direction: column;
   }
 </style>
