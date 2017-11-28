@@ -1,19 +1,6 @@
 <template>
   <div id="wrapper">
-    <Menu mode="horizontal" theme="dark" active-name="1">
-      <MenuItem name="1">
-        Item 1
-      </MenuItem>
-      <MenuItem name="2">
-        Item 2
-      </MenuItem>
-      <MenuItem name="3">
-        Item 3
-      </MenuItem>
-    </Menu>
-    <div class="topNav">
-      <navbar></navbar>
-    </div>
+    <navbar></navbar>
     <main>
       <div class="col1">
         <playlist-queue></playlist-queue>
@@ -47,10 +34,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-
-  .topNav {
-
   }
 
   main {
