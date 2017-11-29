@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <landing-page></landing-page>
+    <home></home>
   </div>
 </template>
 
 <script>
-  import LandingPage from '@/components/LandingPage'
+  import Home from '@/components/Home'
 
   export default {
     name: 'local-music-player',
     components: {
-      LandingPage
+      Home
     }
   }
 </script>
