@@ -41,5 +41,6 @@
   }
   .wrapper {
     padding: none;
+    margin: 0;
   }
 </style>
