@@ -3,7 +3,13 @@ Manage and play songs via the URL, locally.
 
 ## Installing and Running Dev Version
 ```
+# clone the repo
+git clone https://github.com/maxdobeck/local-music-player.git
+
+# install 
 yarn # or npm install
+
+# run dev version
 yarn dev # or npm run dev
 ```
 Todo
