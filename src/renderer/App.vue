@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <home></home>
+    <home :bookmarks="songs"></home>
   </div>
 </template>
 
