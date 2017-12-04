@@ -10,7 +10,7 @@
 <script>
   export default {
     name: 'playlist-queue',
-    props: ['bookmarkFolders']
+    props: ['bookmarkFolders'] // import the first bookmark in the bookmark bar.
   }
 </script>
 
