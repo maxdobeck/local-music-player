@@ -1,6 +1,6 @@
 <template>
   <Row type="flex" justify="center">
-    <div>
+    <div id="playlist-column">
       <h2>Playlists</h2>
       {{ bookmarkFolders }}
     </div>
@@ -12,7 +12,11 @@
     name: 'playlist-queue',
     props: ['bookmarkFolders']
   }
+  console.log(typeof bookmarkFolders)
 </script>
 
 <style>
+  #playlist-column {
+    width: 85%;
+  }
 </style>

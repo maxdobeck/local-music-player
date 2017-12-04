@@ -5,7 +5,7 @@
     </Row>
     <Row type="flex" justify="center">
       <Col span="8">
-        <playlist-queue :bookmarkFolders='bookmarks'></playlist-queue>
+        <playlist-queue :bookmark-folders='bookmarks'></playlist-queue>
       </Col>
       <Col span="8">
         <song-queue></song-queue>
@@ -28,8 +28,8 @@
   import CurrentlyPlaying from './CurrentlyPlaying'
   import { getMusic } from '../ChromeUbuntu.js'
 
-  const bookmarks = getMusic()
-  console.log(bookmarks)
+  let bookmarks = getMusic()
+  // console.log(bookmarks)
 
   export default {
     name: 'home',
@@ -48,6 +48,7 @@
     margin: 0;
     padding: 0;
   }
+
   .wrapper {
     padding: none;
     margin: 0;
