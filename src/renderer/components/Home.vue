@@ -5,7 +5,7 @@
     </Row>
     <Row type="flex" justify="center">
       <Col span="8">
-        <playlist-queue :bookmarks='songs'></playlist-queue>
+        <playlist-queue :bookmarkFolders='bookmarks'></playlist-queue>
       </Col>
       <Col span="8">
         <song-queue></song-queue>
@@ -28,15 +28,15 @@
   import CurrentlyPlaying from './CurrentlyPlaying'
   import { getMusic } from '../ChromeUbuntu.js'
 
-  const songs = getMusic()
-  console.log(songs)
+  const bookmarks = getMusic()
+  console.log(bookmarks)
 
   export default {
     name: 'home',
     components: { Navbar, PlaylistQueue, SongQueue, TileArea, CurrentlyPlaying },
     data () {
       return {
-        songs: songs
+        bookmarks: bookmarks
       }
     }
   }

@@ -7,7 +7,8 @@ export function getMusic () {
   musicBookmark = fs.readFileSync(chromeBookmarks, 'utf8', function (err, data) {
     if (err) throw err
     bookmark = JSON.parse(data)
-    return bookmark.roots.bookmark_bar.children[0].children
+    // return bookmark.roots.bookmark_bar.children[0].children
+    return bookmark.roots
   })
   return musicBookmark
 }
