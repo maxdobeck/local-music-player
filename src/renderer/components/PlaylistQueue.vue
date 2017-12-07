@@ -5,7 +5,7 @@
       <div id="playlist-search">
         <Input v-model="value" placeholder="Find Playlists" style="width: 85%"></Input>
       </div>
-      {{ bookmarkFolders.bookmark_bar.children[0] }}
+      {{ bookmarkFolders.bookmark_bar.children[0].name }}
     </div>
   </Row>
 </template>

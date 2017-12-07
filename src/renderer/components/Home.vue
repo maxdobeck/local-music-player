@@ -8,7 +8,7 @@
         <playlist-queue :bookmark-folders='bookmarks'></playlist-queue>
       </Col>
       <Col span="8">
-        <song-queue></song-queue>
+        <song-queue :bookmark-folders='bookmarks'></song-queue>
       </Col>
       <Col span="8">
         <tile-area></tile-area>

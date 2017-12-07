@@ -5,13 +5,15 @@
     <div id="song-search">
       <Input v-model="value" placeholder="Find Songs" style="width: 80%"></Input>
     </div>
+    {{ bookmarkFolders.bookmark_bar.children[0].children }}
   </div>
 </Row>
 </template>
 
 <script>
   export default {
-    name: 'song-queue'
+    name: 'song-queue',
+    props: ['bookmarkFolders']
   }
 </script>
 
