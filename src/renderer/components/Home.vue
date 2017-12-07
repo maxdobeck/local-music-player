@@ -5,10 +5,10 @@
     </Row>
     <Row type="flex" justify="center">
       <Col span="8">
-        <playlist-queue></playlist-queue>
+        <playlist-queue :bookmark-folders='bookmarks'></playlist-queue>
       </Col>
       <Col span="8">
-        <song-queue></song-queue>
+        <song-queue :bookmark-folders='bookmarks'></song-queue>
       </Col>
       <Col span="8">
         <tile-area></tile-area>
@@ -26,10 +26,19 @@
   import SongQueue from './SongQueue'
   import TileArea from './TileArea'
   import CurrentlyPlaying from './CurrentlyPlaying'
+  import { getMusic } from '../ChromeUbuntu.js'
+
+  let bookmarks = getMusic()
+  // console.log(bookmarks)
 
   export default {
     name: 'home',
-    components: { Navbar, PlaylistQueue, SongQueue, TileArea, CurrentlyPlaying }
+    components: { Navbar, PlaylistQueue, SongQueue, TileArea, CurrentlyPlaying },
+    data () {
+      return {
+        bookmarks: bookmarks
+      }
+    }
   }
 </script>
 
@@ -39,6 +48,11 @@
     margin: 0;
     padding: 0;
   }
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
   .wrapper {
     padding: none;
     margin: 0;
