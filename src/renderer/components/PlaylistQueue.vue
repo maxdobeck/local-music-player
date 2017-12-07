@@ -2,6 +2,9 @@
   <Row type="flex" justify="center">
     <div id="playlist-column">
       <h2>Playlists</h2>
+      <div id="playlist-search">
+        <Input v-model="value" placeholder="Find Playlists" style="width: 85%"></Input>
+      </div>
       {{ bookmarkFolders.bookmark_bar.children[0] }}
     </div>
   </Row>
