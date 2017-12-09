@@ -20,5 +20,14 @@
 <style>
 #song-column {
   width: 100%;
+  height: 89vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 1%;
 }
+
+#song-search {
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
 </style>
