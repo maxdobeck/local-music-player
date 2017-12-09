@@ -1,10 +1,9 @@
 <template>
   <Row type="flex" justify="center">
+    <div id="playlist-search">
+      <Input v-model="value" placeholder="Find Playlists" style="width: 85%"></Input>
+    </div>
     <div id="playlist-column">
-      <h2>Playlists</h2>
-      <div id="playlist-search">
-        <Input v-model="value" placeholder="Find Playlists" style="width: 85%"></Input>
-      </div>
       <Card>
         {{ bookmarkFolders.bookmark_bar.children[0].name }}
       </Card>
@@ -35,5 +34,6 @@
   #playlist-search {
     padding-top: 1%;
     padding-bottom: 1%;
+    width: 55%;
   }
 </style>

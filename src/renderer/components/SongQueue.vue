@@ -1,22 +1,21 @@
 <template>
 <Row type="flex" justify="center">
-  <div id="song-column">
-    <h2>Songs</h2>
-    <div id="song-search">
+  <div id="song-search">
       <Input v-model="value" placeholder="Find Songs" style="width: 80%"></Input>
     </div>
-      <ul>
-        <li>
-          <song-tile v-for="song in songTiles" 
-            :key="song.id"
-            :id="song.id"
-            :name="song.name"
-            :url="song.url"
-          >
-          </song-tile>
-        </li>
-      </ul>
-    </div>
+  <div id="song-column">
+    <ul>
+      <li>
+        <song-tile v-for="song in songTiles" 
+          :key="song.id"
+          :id="song.id"
+          :name="song.name"
+          :url="song.url"
+        >
+        </song-tile>
+      </li>
+    </ul>
+  </div>
 </Row>
 </template>
 
@@ -49,5 +48,6 @@
 #song-search {
     padding-top: 1%;
     padding-bottom: 1%;
+    width: 55%;
 }
 </style>
