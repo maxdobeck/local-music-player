@@ -15,7 +15,12 @@
 <script>
   export default {
     name: 'playlist-queue',
-    props: ['bookmarkFolders'] // import the first bookmark in the bookmark bar.
+    props: ['bookmarkFolders'], // import the first bookmark in the bookmark bar.
+    data () {
+      return {
+        value: ''
+      }
+    }
   }
 </script>
 
