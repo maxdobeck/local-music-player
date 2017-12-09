@@ -22,7 +22,8 @@
 <script>
   // {{ bookmarkFolders.bookmark_bar.children[0].children }}
   import SongTile from './SongTile'
-  
+  let lunr = require('lunr')
+
   export default {
     name: 'song-queue',
     components: { SongTile },
@@ -34,6 +35,14 @@
       }
     }
   }
+
+  let idx = lunr(function () {
+    this.field('bookmarkFolders.bookmark_bar.children[0].children.name')
+
+    bookmarkFolders.bookmark_bar.children[0].children.forEach(function (song) {
+      this.add(song)
+    }, this)
+  })
 </script>
 
 <style>
