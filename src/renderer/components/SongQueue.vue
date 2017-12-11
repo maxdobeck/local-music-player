@@ -1,6 +1,6 @@
 <template>
 <Row type="flex" justify="center">
-    {{ index[0].matchData.metadata }}
+    {{ index }}
   <div id="song-search">
       <Input v-model="value" placeholder="Find Songs" style="width: 80%"></Input>
     </div>

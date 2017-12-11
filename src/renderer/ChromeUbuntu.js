@@ -20,11 +20,11 @@ export function makeIndex (data) {
   var idx = lunr(function () {
     this.field('name')
     this.ref('id')
+
     data.forEach(function (song) {
       this.add(song)
     }, this)
   })
   // idx.add(data) add in idx func instead
-  console.log(idx.search('Galantis'))
-  return idx.search('Galantis')
+  return idx.search('Tall Tall')
 }
