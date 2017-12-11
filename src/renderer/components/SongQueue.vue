@@ -1,5 +1,6 @@
 <template>
 <Row type="flex" justify="center">
+    {{ index[0].matchData.metadata }}
   <div id="song-search">
       <Input v-model="value" placeholder="Find Songs" style="width: 80%"></Input>
     </div>
@@ -26,7 +27,7 @@
   export default {
     name: 'song-queue',
     components: { SongTile },
-    props: ['bookmarkFolders'],
+    props: ['bookmarkFolders', 'index'],
     data () {
       return {
         songTiles: this.bookmarkFolders.bookmark_bar.children[0].children,
@@ -38,7 +39,7 @@
 
 <style>
 #song-column {
-  width: 100%;
+  width: 90%;
   height: 89vh;
   overflow-y: scroll;
   overflow-x: hidden;
