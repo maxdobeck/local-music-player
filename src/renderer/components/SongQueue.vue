@@ -1,10 +1,10 @@
 <template>
 <Row type="flex" justify="center">
-    {{ index }}
   <div id="song-search">
       <Input v-model="value" placeholder="Find Songs" style="width: 80%"></Input>
     </div>
   <div id="song-column">
+    {{ index }}
     <ul>
       <li>
         <song-tile v-for="song in songTiles" 

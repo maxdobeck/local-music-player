@@ -26,5 +26,5 @@ export function makeIndex (data) {
     }, this)
   })
   // idx.add(data) add in idx func instead
-  return idx.search('Tall Tall')
+  return idx.search('*')
 }
