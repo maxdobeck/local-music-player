@@ -9,6 +9,6 @@ export function getMusic () {
     // bookmark. would return Music bookmarks
     return bookmark
   })
-  console.log(musicBookmark)
+  // console.log(musicBookmark)
   return JSON.parse(musicBookmark).roots
 }
