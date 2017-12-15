@@ -2,9 +2,9 @@
 <Row type="flex" justify="center">
   <div id="song-search">
       <Input v-model="value" placeholder="Find Songs" style="width: 80%"></Input>
-    </div>
+  </div>
   <div id="song-column">
-    {{ index }}
+    {{ searchIndex() }}
     <ul>
       <li>
         <song-tile v-for="song in songTiles" 
@@ -32,6 +32,11 @@
       return {
         songTiles: this.bookmarkFolders.bookmark_bar.children[0].children,
         value: ''
+      }
+    },
+    methods: {
+      searchIndex () {
+        return this.value
       }
     }
   }
