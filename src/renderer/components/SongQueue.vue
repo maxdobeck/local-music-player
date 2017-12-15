@@ -21,7 +21,6 @@
 </template>
 
 <script>
-  // {{ bookmarkFolders.bookmark_bar.children[0].children }}
   import SongTile from './SongTile'
   import { makeIndex } from '../ChromeUbuntu'
   
@@ -38,7 +37,9 @@
     methods: {
       searchIndex () {
         let songIndex = makeIndex(this.songTiles)
-        return songIndex.search(this.value)
+        let optimisticQuery = this.value + '*'
+        console.log(optimisticQuery)
+        return songIndex.search(optimisticQuery)
       }
     }
   }

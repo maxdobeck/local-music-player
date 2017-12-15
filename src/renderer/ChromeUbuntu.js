@@ -25,6 +25,5 @@ export function makeIndex (data) {
       this.add(song)
     }, this)
   })
-  // idx.add(data) add in idx func instead
   return idx
 }
