@@ -23,6 +23,7 @@
 <script>
   // {{ bookmarkFolders.bookmark_bar.children[0].children }}
   import SongTile from './SongTile'
+  import { makeIndex } from '../ChromeUbuntu'
   
   export default {
     name: 'song-queue',
@@ -36,7 +37,8 @@
     },
     methods: {
       searchIndex () {
-        return this.value
+        let songIndex = makeIndex(this.songTiles)
+        return songIndex.search(this.value)
       }
     }
   }
