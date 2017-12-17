@@ -75,6 +75,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 1%;
+  padding-bottom: 15%;
 }
 
 #song-search {
