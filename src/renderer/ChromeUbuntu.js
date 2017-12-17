@@ -9,7 +9,6 @@ export function getMusic () {
     // bookmark.bookmark_bar.children[0].children would return all children in Music folder
     return bookmark
   })
-  // console.log(musicBookmark)
 
   return JSON.parse(musicBookmark).roots
 }

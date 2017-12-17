@@ -30,7 +30,7 @@
 
   let bookmarks = getMusic()
   let searchIndex = makeIndex(bookmarks.bookmark_bar.children[0].children)
-  console.log(bookmarks.bookmark_bar.children[0].children)
+  // console.log(bookmarks.bookmark_bar.children[0].children)
 
   export default {
     name: 'home',
