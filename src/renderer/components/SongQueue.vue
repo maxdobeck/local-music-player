@@ -1,7 +1,19 @@
 <template>
   <Row type="flex" justify="center">
     <div id="song-search">
+      <Row>
         <Input v-model="value" @on-keyup="searchResult" placeholder="Find Songs" style="width: 80%"></Input>
+        <Button @click="faqModal = true">?</Button>
+        <Modal
+          v-model="faqModal"
+          title="Searching Tips">
+          <h4>For best results try searching with a wildcard at the end of the query.  Like: 'myText*</h4>
+          <p>Add a Wildcard: query*</p>
+          <p>Boost: query1^10 query2</p>
+          <p>Fuzzy Match: query~1</p>
+          <div slot="footer"></div>
+        </Modal>
+      </Row>
     </div>
     <div id="song-column">
       <ul>
@@ -40,7 +52,8 @@
       return {
         songs: this.bookmarkFolders.bookmark_bar.children[0].children,
         value: '',
-        queryResults: []
+        queryResults: [],
+        faqModal: false
       }
     },
     methods: {
