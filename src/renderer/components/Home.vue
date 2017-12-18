@@ -8,7 +8,7 @@
         <playlist-queue :bookmark-folders='bookmarks'></playlist-queue>
       </Col>
       <Col span="8">
-        <song-queue :bookmark-folders='bookmarks'></song-queue>
+        <song-queue :bookmark-folders='bookmarks' :index='searchIndex'></song-queue>
       </Col>
       <Col span="8">
         <tile-area></tile-area>
@@ -26,17 +26,19 @@
   import SongQueue from './SongQueue'
   import TileArea from './TileArea'
   import CurrentlyPlaying from './CurrentlyPlaying'
-  import { getMusic } from '../ChromeUbuntu.js'
+  import { getMusic, makeIndex } from '../ChromeUbuntu.js'
 
   let bookmarks = getMusic()
-  // console.log(bookmarks)
+  let searchIndex = makeIndex(bookmarks.bookmark_bar.children[0].children)
+  // console.log(bookmarks.bookmark_bar.children[0].children)
 
   export default {
     name: 'home',
     components: { Navbar, PlaylistQueue, SongQueue, TileArea, CurrentlyPlaying },
     data () {
       return {
-        bookmarks: bookmarks
+        bookmarks: bookmarks,
+        searchIndex: searchIndex
       }
     }
   }
