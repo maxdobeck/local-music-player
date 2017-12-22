@@ -1,17 +1,14 @@
 <template>
   <Row type="flex" justify="center">
-    <div id="playlist-search">
-      <Input v-model="value" placeholder="Find Playlists" style="width: 85%"></Input>
-    </div>
     <div id="playlist-column">
       <playlist-tile v-for="folder in reduceBookmarks()"
-        :key="folder.id"
-        :name="folder"
+            :key="folder.id"
+            :id="folder.id"
+            :name="folder.name"
+            @click.native="choose(folder)"
+            :selected="selected"
       >
       </playlist-tile>
-      <Card>
-        {{ bookmarkFolders.bookmark_bar.children[0].name }}
-      </Card>
     </div>
   </Row>
 </template>
@@ -25,14 +22,24 @@
     props: ['bookmarkFolders'], // import the first bookmark in the bookmark bar.
     data () {
       return {
-        value: ''
+        value: '',
+        selected: {}
       }
     },
     methods: {
       reduceBookmarks () {
-        let barFolders = this.bookmarkFolders.bookmark_bar.children.map(x => x.name)
-        console.log(barFolders)
-        return barFolders
+        let myNewObj = []
+        let i = 0
+        this.bookmarkFolders.bookmark_bar.children.forEach(function (folder) {
+          myNewObj.push({'id': i, 'name': folder.name})
+          i++
+        })
+
+        // this.bookmarkFolders.bookmark_bar.children.map(x => myNewObj.push(x.name))
+        return myNewObj
+      },
+      choose (folder) {
+        this.selected = folder
       }
     }
   }
