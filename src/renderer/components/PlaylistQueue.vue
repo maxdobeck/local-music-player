@@ -6,7 +6,7 @@
             :id="folder.id"
             :name="folder.name"
             @click.native="choose(folder)"
-            :selected="selected"
+            :isActive="isActive(folder.id)"
       >
       </playlist-tile>
     </div>
@@ -40,6 +40,13 @@
       },
       choose (folder) {
         this.selected = folder
+      },
+      isActive (folderId) {
+        if (folderId === this.selected.id) {
+          return true
+        } else {
+          return false
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 <template>
-  <Card class="" v-bind:class="{ active: isSelected }">
+  <Card class="" 
+    v-bind:class="{ active: isActive }">
     {{ name }}
   </Card>
 </template>
@@ -7,22 +8,7 @@
 <script>
   export default {
     name: 'playlist-tile',
-    props: ['id', 'name', 'selected'],
-    data () {
-      return {
-        isSelected: false
-      }
-    },
-    methods: {
-      isActive () {
-        console.log(this.selected.id)
-        if (this.selected.id === this.id) {
-          this.isSelected = true
-        } else {
-          this.isSelected = false
-        }
-      }
-    }
+    props: ['id', 'name', 'selected', 'isActive']
   }
 </script>
 
