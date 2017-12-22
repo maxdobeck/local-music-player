@@ -14,6 +14,7 @@ yarn dev # or npm run dev
 ```
 Todo
 ----
-- [ ] Route to other pages
+- [ ] Link to youtube pages
 - [ ] iview modals for tiles
-- [ ] reusable tile components, pass props to make changes to icon and title
+- [ ] DRY reusable tile components, pass props to make changes to icon and title
+- [ ] Add Vuex for updating cur-playlist and cur-song 
