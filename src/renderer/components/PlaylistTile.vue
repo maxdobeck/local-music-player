@@ -1,5 +1,5 @@
 <template>
-  <Card class="" 
+  <Card class="playlistCard" 
     v-bind:class="{ active: isActive() }">
     {{ name }}
   </Card>
@@ -31,5 +31,9 @@
 <style>
   .active {
     background-color: rgb(35, 153, 250);
+  }
+  .playlistCard {
+    user-select: none;
+    cursor: default;
   }
 </style>
