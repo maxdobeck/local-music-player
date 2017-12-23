@@ -63,16 +63,15 @@
     },
     methods: {
       searchResult () {
-        let songIndex = makeIndex(this.songs)
+        let songIndex = makeIndex(this.songs[this.selectedPlaylist.id].children)
         let foundSongs = songIndex.search(this.value)
         let RefsToShow = foundSongs.map(x => x.ref)
         console.log('idx.search results: ', RefsToShow)
         let results = []
 
-        this.songs.forEach(function (song) {
+        this.songs[this.selectedPlaylist.id].children.forEach(function (song) {
           if (RefsToShow.length > 0) {
             RefsToShow.forEach(function (ref) {
-              console.log(song.id === ref)
               if (song.id === ref) {
                 results.push(song)
               }
