@@ -1,5 +1,8 @@
 # local-music-manager
-Manage and play songs via the URL, locally.
+Manage and play songs in your bookmarks, locally.
+
+## Setup and Use
+Only Chrome bookmarks are currently supported.  Only unnested bookmark folders from your Bookmarks Bar will show up. 
 
 ## Installing and Running Dev Version
 ```
