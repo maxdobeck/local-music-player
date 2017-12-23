@@ -17,4 +17,4 @@ Todo
 - [ ] Link to youtube pages
 - [ ] iview modals for tiles
 - [ ] DRY reusable tile components, pass props to make changes to icon and title
-- [ ] Add Vuex for updating cur-playlist and cur-song 
+- [x] ~~Add Vuex for updating cur-playlist and cur-song~~ Just had to use a global event bus!
