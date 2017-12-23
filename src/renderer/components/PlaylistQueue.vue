@@ -39,11 +39,8 @@
         return myNewObj
       },
       choose (folder) {
-        if (this.selected.id === folder.id) {
-          this.selected = {}
-        } else {
-          this.selected = folder
-        }
+        this.selected = folder
+        this.$bus.$emit('selectedPlaylist', this.selected)
       }
     }
   }

@@ -27,7 +27,7 @@
           </song-tile>
         </li>
         <li v-else>
-          <song-tile v-for="song in songs"
+          <song-tile v-for="song in songs[selectedPlaylist.id].children"
             :key="song.id"
             :id="song.id"
             :name="song.name"
@@ -50,11 +50,16 @@
     props: ['bookmarkFolders', 'index'],
     data () {
       return {
-        songs: this.bookmarkFolders.bookmark_bar.children[0].children,
+        songs: this.bookmarkFolders.bookmark_bar.children,
         value: '',
         queryResults: [],
-        faqModal: false
+        faqModal: false,
+        selectedPlaylist: {}
       }
+    },
+    created () {
+      this.$bus.$on('selectedPlaylist', this.updateSelected)
+      console.log('This is from the Created method in SongQueue!', this.updateSelected)
     },
     methods: {
       searchResult () {
@@ -76,6 +81,9 @@
         })
         console.log('Search Results arr: ', results)
         this.queryResults = results
+      },
+      updateSelected (selected) {
+        this.selectedPlaylist = selected
       }
     }
   }
