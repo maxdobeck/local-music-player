@@ -23,6 +23,7 @@
             :id="song.id"
             :name="song.name"
             :url="song.url"
+            @click.native="choose(song)"
           >
           </song-tile>
         </li>
@@ -32,6 +33,7 @@
             :id="song.id"
             :name="song.name"
             :url="song.url"
+            @click.native="choose(song)"
           >
           </song-tile>
         </li>
@@ -54,25 +56,24 @@
         value: '',
         queryResults: [],
         faqModal: false,
-        selectedPlaylist: {}
+        selectedPlaylist: {},
+        selectedSong: {}
       }
     },
     created () {
-      this.$bus.$on('selectedPlaylist', this.updateSelected)
-      console.log('This is from the Created method in SongQueue!', this.updateSelected)
+      this.$bus.$on('selectedPlaylist', this.updateSelectedPlaylist)
     },
     methods: {
       searchResult () {
-        let songIndex = makeIndex(this.songs)
+        let songIndex = makeIndex(this.songs[this.selectedPlaylist.id].children)
         let foundSongs = songIndex.search(this.value)
         let RefsToShow = foundSongs.map(x => x.ref)
         console.log('idx.search results: ', RefsToShow)
         let results = []
 
-        this.songs.forEach(function (song) {
+        this.songs[this.selectedPlaylist.id].children.forEach(function (song) {
           if (RefsToShow.length > 0) {
             RefsToShow.forEach(function (ref) {
-              console.log(song.id === ref)
               if (song.id === ref) {
                 results.push(song)
               }
@@ -82,8 +83,13 @@
         console.log('Search Results arr: ', results)
         this.queryResults = results
       },
-      updateSelected (selected) {
+      updateSelectedPlaylist (selected) {
         this.selectedPlaylist = selected
+      },
+      choose (song) {
+        console.log('You clicked this song: ', song)
+        this.selectedSong = song
+        this.$bus.$emit('selectedSong', this.selectedSong)
       }
     }
   }
