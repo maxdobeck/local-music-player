@@ -5,8 +5,10 @@
       <p>{{ selectedSong.name }}</p>
       <youtube
         :video-id="videoId"
-        player-width="200" 
+        player-width="400" 
         player-height="200"
+        :player-vars="{ autoplay: 1 }"
+        @ended="ended"
       ></youtube>
     </div>
   </Row>
@@ -18,7 +20,8 @@ export default {
   data () {
     return {
       selectedSong: {},
-      videoId: ''
+      videoId: '',
+      videoEnded: false
     }
   },
   created () {
@@ -28,6 +31,9 @@ export default {
     updateSelectedSong (selected) {
       this.selectedSong = selected
       this.videoId = this.$youtube.getIdFromURL(selected.url)
+    },
+    ended () {
+      this.videoEnded = true
     }
   }
 }
