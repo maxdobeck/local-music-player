@@ -23,6 +23,7 @@
             :id="song.id"
             :name="song.name"
             :url="song.url"
+            @click.native="choose(song)"
           >
           </song-tile>
         </li>
@@ -32,6 +33,7 @@
             :id="song.id"
             :name="song.name"
             :url="song.url"
+            @click.native="choose(song)"
           >
           </song-tile>
         </li>
@@ -54,12 +56,12 @@
         value: '',
         queryResults: [],
         faqModal: false,
-        selectedPlaylist: {}
+        selectedPlaylist: {},
+        selectedSong: {}
       }
     },
     created () {
-      this.$bus.$on('selectedPlaylist', this.updateSelected)
-      console.log('This is from the Created method in SongQueue!', this.updateSelected)
+      this.$bus.$on('selectedPlaylist', this.updateSelectedPlaylist)
     },
     methods: {
       searchResult () {
@@ -81,8 +83,13 @@
         console.log('Search Results arr: ', results)
         this.queryResults = results
       },
-      updateSelected (selected) {
+      updateSelectedPlaylist (selected) {
         this.selectedPlaylist = selected
+      },
+      choose (song) {
+        console.log('You clicked this song: ', song)
+        this.selectedSong = song
+        this.$bus.$emit('selectedSong', this.selectedSong)
       }
     }
   }

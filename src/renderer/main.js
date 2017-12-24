@@ -2,7 +2,9 @@ import Vue from 'vue'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import App from './App'
+import VueYouTubeEmbed from 'vue-youtube-embed'
 
+Vue.use(VueYouTubeEmbed)
 Vue.use(iView)
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
