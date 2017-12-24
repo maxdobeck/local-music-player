@@ -2,9 +2,12 @@
   <Row type="flex" justify="center">
     <div>
       <h3>Currently Playing</h3>
-      <p>{{ selectedSong }}</p>
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/f9X1C7pTu-M?rel=0&amp;"frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-
+      <p>{{ selectedSong.name }}</p>
+      <youtube
+        :video-id="videoId"
+        player-width="200" 
+        player-height="200"
+      ></youtube>
     </div>
   </Row>
 </template>
@@ -14,7 +17,8 @@ export default {
   name: 'currently-playing',
   data () {
     return {
-      selectedSong: {}
+      selectedSong: {},
+      videoId: ''
     }
   },
   created () {
@@ -23,6 +27,7 @@ export default {
   methods: {
     updateSelectedSong (selected) {
       this.selectedSong = selected
+      this.videoId = this.$youtube.getIdFromURL(selected.url)
     }
   }
 }
