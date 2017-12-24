@@ -3,7 +3,7 @@
     <div>
       <h3>Currently Playing</h3>
       <p>{{ selectedSong.name }}</p>
-      <p>Is the video done: {{ videoEnded }}</p>
+      <p>Is the video done? {{ videoEnded }}</p>
       <youtube
         :video-id="videoId"
         player-width="400" 

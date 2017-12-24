@@ -1,7 +1,7 @@
 <template>
-  <Card class="playlistCard" 
+  <Card class="playlistTile" 
     v-bind:class="{ active: isActive() }">
-    {{ name }}
+    <h4>{{ name }}</h4>
   </Card>
 </template>
 
@@ -30,10 +30,12 @@
 
 <style>
   .active {
-    background-color: rgb(35, 153, 250);
+    background-color: rgb(167, 239, 248);
   }
-  .playlistCard {
+  .playlistTile {
     user-select: none;
     cursor: default;
+    width: 50%;
+    text-align: center;
   }
 </style>
