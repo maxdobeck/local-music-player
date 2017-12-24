@@ -15,9 +15,13 @@ yarn # or npm install
 # run dev version
 yarn dev # or npm run dev
 ```
-Todo
+Todo Prerelease
 ----
-- [ ] Link to youtube pages
+- [ ] Pretty link to url from card
 - [ ] iview modals for tiles
 - [ ] DRY reusable tile components, pass props to make changes to icon and title
 - [x] ~~Add Vuex for updating cur-playlist and cur-song~~ Just had to use a global event bus!
+- [x] Click a song to autoplay a youtube video
+- [ ] Global key commands for Previous and Next song
+- [ ] Soundcloud support
+- [ ] Autoplay next song in queue
