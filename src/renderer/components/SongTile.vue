@@ -11,14 +11,11 @@
   export default {
     name: 'song-tile',
     props: ['id', 'name', 'url', 'selectedSong'],
-    data () {
-      return {
-        selectedSong: this.selectedSong
-      }
-    },
     methods: {
       isActive () {
-        if (this.id === this.selectedSong.id) {
+        if (this.selectedSong === undefined) {
+          return false
+        } else if (this.id === this.selectedSong.id) {
           return true
         } else {
           return false

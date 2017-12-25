@@ -24,4 +24,9 @@ Todo Prerelease
 - [x] Click a song to autoplay a youtube video
 - [ ] Global key commands for Previous and Next song
 - [ ] Soundcloud support
-- [ ] Autoplay next song in queue
+- [x] Autoplay next song in queue
+- [x] Return to starting state when last song is played
+- [ ] Watch bookmark file for changes
+- [ ] Normalize bookmark file read for all systems
+- [ ] Support firefox bookmarks
+- [ ] Support edge bookmarks
