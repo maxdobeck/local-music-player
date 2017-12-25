@@ -1,6 +1,7 @@
 <template>
-  <Card class="playlistTile" 
-    v-bind:class="{ active: isActive() }">
+  <Card class="playlistTile"
+    v-bind:class="{ active: isActive() }"
+  >
     <h4>{{ name }}</h4>
   </Card>
 </template>

@@ -24,6 +24,7 @@
             :name="song.name"
             :url="song.url"
             @click.native="choose(song)"
+            :selectedSong="selectedSong"
           >
           </song-tile>
         </li>
@@ -34,6 +35,7 @@
             :name="song.name"
             :url="song.url"
             @click.native="choose(song)"
+            :selectedSong="selectedSong"
           >
           </song-tile>
         </li>
