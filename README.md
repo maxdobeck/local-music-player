@@ -17,7 +17,7 @@ yarn dev # or npm run dev
 ```
 Todo Prerelease
 ----
-- [ ] Pretty link to url from card
+- [ ] Pretty link to song url from card
 - [ ] iview modals for tiles
 - [ ] DRY reusable tile components, pass props to make changes to icon and title
 - [x] ~~Add Vuex for updating cur-playlist and cur-song~~ Just had to use a global event bus!
@@ -30,3 +30,4 @@ Todo Prerelease
 - [ ] Normalize bookmark file read for all systems
 - [ ] Support firefox bookmarks
 - [ ] Support edge bookmarks
+- [ ] Support Nested Playlists
