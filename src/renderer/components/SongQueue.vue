@@ -24,6 +24,7 @@
             :name="song.name"
             :url="song.url"
             @click.native="choose(song)"
+            :selectedSong="selectedSong"
           >
           </song-tile>
         </li>
@@ -34,6 +35,7 @@
             :name="song.name"
             :url="song.url"
             @click.native="choose(song)"
+            :selectedSong="selectedSong"
           >
           </song-tile>
         </li>
@@ -62,6 +64,7 @@
     },
     created () {
       this.$bus.$on('selectedPlaylist', this.updateSelectedPlaylist)
+      this.$bus.$on('videoEnded', this.nextSong)
     },
     methods: {
       searchResult () {
@@ -89,6 +92,31 @@
       choose (song) {
         console.log('You clicked this song: ', song)
         this.selectedSong = song
+        this.$bus.$emit('selectedSong', this.selectedSong)
+      },
+      nextSong () {
+        let curSong
+        let nextSong
+        if (this.queryResults.length > 0) {
+          curSong = this.queryResults.indexOf(this.selectedSong)
+          nextSong = curSong + 1
+          if (nextSong > this.queryResults.length) {
+            this.selectedSong = {}
+            return
+          } else {
+            this.selectedSong = this.queryResults[nextSong]
+          }
+        } else {
+          curSong = this.songs[this.selectedPlaylist.id].children.indexOf(this.selectedSong)
+          nextSong = curSong + 1
+          if (nextSong > this.songs[this.selectedPlaylist.id].children.length) {
+            this.selectedSong = {}
+            return
+          } else {
+            this.selectedSong = this.songs[this.selectedPlaylist.id].children[nextSong]
+          }
+        }
+        console.log(this.selectedSong)
         this.$bus.$emit('selectedSong', this.selectedSong)
       }
     }

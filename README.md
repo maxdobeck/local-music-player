@@ -17,11 +17,17 @@ yarn dev # or npm run dev
 ```
 Todo Prerelease
 ----
-- [ ] Pretty link to url from card
+- [ ] Pretty link to song url from card
 - [ ] iview modals for tiles
 - [ ] DRY reusable tile components, pass props to make changes to icon and title
 - [x] ~~Add Vuex for updating cur-playlist and cur-song~~ Just had to use a global event bus!
 - [x] Click a song to autoplay a youtube video
 - [ ] Global key commands for Previous and Next song
 - [ ] Soundcloud support
-- [ ] Autoplay next song in queue
+- [x] Autoplay next song in queue
+- [x] Return to starting state when last song is played
+- [ ] Watch bookmark file for changes
+- [ ] Normalize bookmark file read for all systems
+- [ ] Support firefox bookmarks
+- [ ] Support edge bookmarks
+- [ ] Support Nested Playlists

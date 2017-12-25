@@ -1,7 +1,7 @@
 <template>
   <Row type="flex" justify="center">
     <div id="playlist-column">
-      <playlist-tile v-for="folder in reduceBookmarks()"
+      <playlist-tile class="playlistTiles" v-for="folder in reduceBookmarks()"
             :key="folder.id"
             :id="folder.id"
             :name="folder.name"
@@ -58,5 +58,8 @@
     padding-top: 1%;
     padding-bottom: 1%;
     width: 55%;
+  }
+  .playlistTiles {
+    margin: auto;
   }
 </style>
