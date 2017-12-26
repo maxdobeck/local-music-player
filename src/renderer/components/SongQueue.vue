@@ -71,7 +71,6 @@
         let songIndex = makeIndex(this.songs[this.selectedPlaylist.id].children)
         let foundSongs = songIndex.search(this.value)
         let RefsToShow = foundSongs.map(x => x.ref)
-        console.log('idx.search results: ', RefsToShow)
         let results = []
 
         this.songs[this.selectedPlaylist.id].children.forEach(function (song) {
@@ -83,14 +82,12 @@
             })
           }
         })
-        console.log('Search Results arr: ', results)
         this.queryResults = results
       },
       updateSelectedPlaylist (selected) {
         this.selectedPlaylist = selected
       },
       choose (song) {
-        console.log('You clicked this song: ', song)
         this.selectedSong = song
         this.$bus.$emit('selectedSong', this.selectedSong)
       },
@@ -116,7 +113,6 @@
             this.selectedSong = this.songs[this.selectedPlaylist.id].children[nextSong]
           }
         }
-        console.log(this.selectedSong)
         this.$bus.$emit('selectedSong', this.selectedSong)
       }
     }

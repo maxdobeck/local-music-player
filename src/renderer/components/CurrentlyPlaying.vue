@@ -11,13 +11,17 @@
         @playing="playing"
         @ended="ended"
       ></youtube>
+      <player-controls class="controls"></player-controls>
     </div>
   </Row>
 </template>
 
 <script>
+import PlayerControls from './PlayerControls'
+
 export default {
   name: 'currently-playing',
+  components: { PlayerControls },
   data () {
     return {
       selectedSong: {},
@@ -47,4 +51,7 @@ export default {
 </script>
 
 <style>
+  .controls {
+    margin-left: 25%;
+  }
 </style>
