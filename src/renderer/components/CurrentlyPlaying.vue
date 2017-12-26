@@ -51,7 +51,4 @@ export default {
 </script>
 
 <style>
-  .controls {
-    margin-left: 25%;
-  }
 </style>

@@ -38,5 +38,6 @@
     cursor: default;
     width: 50%;
     text-align: center;
+    margin-bottom: 1%;
   }
 </style>

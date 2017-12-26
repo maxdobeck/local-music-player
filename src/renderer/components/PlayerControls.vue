@@ -1,15 +1,11 @@
 <template>
   <div>
     <ButtonGroup  class="playerControls">
-      <Button type="primary" size="large">
+      <Button type="primary" size="large" @click="prevSong">
         <Icon type="chevron-left"></Icon>
         Prev
       </Button>
-      <Button class="" :class="{ paused: paused }" type="primary" size="large">
-        <Icon v-if="paused === true" type="pause"></Icon>
-        <Icon v-else type="play"></Icon>
-      </Button>
-      <Button type="primary" size="large">
+      <Button type="primary" size="large" @click="nextSong">
         Next
         <Icon type="chevron-right"></Icon>
       </Button>
@@ -24,15 +20,17 @@ export default {
     return {
       paused: false
     }
+  },
+  methods: {
+    nextSong () {
+      this.$bus.$emit('videoEnded', this.videoEnded)
+    },
+    prevSong () {
+      this.$bus.$emit('previousSong', true)
+    }
   }
 }
 </script>
 
 <style>
-  .paused {
-    background-color: red;
-  }
-  .paused:hover {
-    background-color: red;
-  }
 </style>
