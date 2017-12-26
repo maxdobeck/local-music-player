@@ -59,19 +59,20 @@
         queryResults: [],
         faqModal: false,
         selectedPlaylist: {},
-        selectedSong: {}
+        selectedSong: 'none'
       }
     },
     created () {
       this.$bus.$on('selectedPlaylist', this.updateSelectedPlaylist)
       this.$bus.$on('videoEnded', this.nextSong)
+      this.$bus.$on('previousSong', this.prevSong)
+      this.$bus.$on('pause', this.pause)
     },
     methods: {
       searchResult () {
         let songIndex = makeIndex(this.songs[this.selectedPlaylist.id].children)
         let foundSongs = songIndex.search(this.value)
         let RefsToShow = foundSongs.map(x => x.ref)
-        console.log('idx.search results: ', RefsToShow)
         let results = []
 
         this.songs[this.selectedPlaylist.id].children.forEach(function (song) {
@@ -83,25 +84,52 @@
             })
           }
         })
-        console.log('Search Results arr: ', results)
         this.queryResults = results
       },
       updateSelectedPlaylist (selected) {
         this.selectedPlaylist = selected
       },
       choose (song) {
-        console.log('You clicked this song: ', song)
         this.selectedSong = song
         this.$bus.$emit('selectedSong', this.selectedSong)
+      },
+      prevSong () {
+        let curSong = 0
+        let prevSong = 0
+
+        if (this.queryResults.length > 0) {
+          curSong = this.queryResults.indexOf(this.selectedSong)
+          prevSong = curSong - 1
+          if (prevSong < 0) {
+            this.selectedSong = undefined
+            return
+          } else {
+            this.selectedSong = this.queryResults[prevSong]
+          }
+        } else {
+          curSong = this.songs[this.selectedPlaylist.id].children.indexOf(this.selectedSong)
+          prevSong = curSong - 1
+          if (prevSong < 0) {
+            this.selectedSong = undefined
+            return
+          } else {
+            this.selectedSong = this.songs[this.selectedPlaylist.id].children[prevSong]
+          }
+        }
+        if (this.selectedSong !== undefined) {
+          console.log(this.selectedSong)
+          this.$bus.$emit('selectedSong', this.selectedSong)
+        }
       },
       nextSong () {
         let curSong
         let nextSong
+
         if (this.queryResults.length > 0) {
           curSong = this.queryResults.indexOf(this.selectedSong)
           nextSong = curSong + 1
           if (nextSong > this.queryResults.length) {
-            this.selectedSong = {}
+            this.selectedSong = undefined
             return
           } else {
             this.selectedSong = this.queryResults[nextSong]
@@ -109,15 +137,16 @@
         } else {
           curSong = this.songs[this.selectedPlaylist.id].children.indexOf(this.selectedSong)
           nextSong = curSong + 1
-          if (nextSong > this.songs[this.selectedPlaylist.id].children.length) {
-            this.selectedSong = {}
+          if (nextSong > this.songs[this.selectedPlaylist.id].children.length || this.selectedSong === undefined) {
+            this.selectedSong = undefined
             return
           } else {
             this.selectedSong = this.songs[this.selectedPlaylist.id].children[nextSong]
           }
         }
-        console.log(this.selectedSong)
-        this.$bus.$emit('selectedSong', this.selectedSong)
+        if (this.selectedSong !== undefined) {
+          this.$bus.$emit('selectedSong', this.selectedSong)
+        }
       }
     }
   }

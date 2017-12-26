@@ -2,7 +2,7 @@
   <Card class="playlistTile"
     v-bind:class="{ active: isActive() }"
   >
-    <h4>{{ name }}</h4>
+    <h2>{{ name }}</h2>
   </Card>
 </template>
 
@@ -38,5 +38,6 @@
     cursor: default;
     width: 50%;
     text-align: center;
+    margin-bottom: 1%;
   }
 </style>
