@@ -28,6 +28,7 @@
 <style>
   .songCard {
     width: 85%;
+    margin-bottom: 1%;
   }
   .active {
     background-color: rgb(167, 239, 248);
