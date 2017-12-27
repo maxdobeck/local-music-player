@@ -33,4 +33,3 @@ Todo Prerelease
 - [ ] Support Nested Playlists
 - [ ] Test search responsiveness at 500 value iterations up to 10,000
 - [ ] Scrollspy for top,botom, and current song
-- [ ] Default to first playlist item
